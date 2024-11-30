@@ -20,11 +20,13 @@ void MainMenuScreen::LoadContent(ResourceManager& resourceManager)
 	m_pTexture = resourceManager.Load<Texture>("Textures\\Logo.png");
 	m_texturePosition = Game::GetScreenCenter() - Vector2::UNIT_Y * 150;
 
+
 	// Create the menu items
 	const int COUNT = 2;
 	MenuItem *pItem;
-	Font::SetLoadSize(20, true);
-	Font *pFont = resourceManager.Load<Font>("Fonts\\arial.ttf");
+	Font::SetLoadSize(30, true);
+	//CHANGE THE FONT OF THE MENU ITEMS
+	Font* pFont = resourceManager.Load<Font>("Fonts\\Ethnocentric.ttf");
 
 	SetDisplayCount(COUNT);
 
@@ -62,7 +64,8 @@ void MainMenuScreen::Update(const GameTime& gameTime)
 	{
 		pItem->SetAlpha(alpha);
 		isSelected = pItem->IsSelected();
-		pItem->SetColor(isSelected ? Color::WHITE : Color::BLUE);
+		//CHANGE THE COLOR ON THE MAIN MENU 
+		pItem->SetColor(isSelected ? Color::YELLOW : Color::RED);
 		pItem->SetTextOffset(isSelected ? Vector2::UNIT_X * offset : Vector2::ZERO);
 	}
 

@@ -4,13 +4,17 @@
 
 void PlayerShip::LoadContent(ResourceManager& resourceManager)
 {
+	
 	ConfineToScreen();
 	SetResponsiveness(0.1);
 
+	//Load the player ship
 	m_pTexture = resourceManager.Load<Texture>("Textures\\PlayerShip.png");
 
+	//Load in sound effect
 	AudioSample* pAudio = resourceManager.Load<AudioSample>("Audio\\Effects\\Laser.wav");
 	pAudio->SetVolume(0.5f);
+	//Create the weapon for the player ship
 	GetWeapon("Main Blaster")->SetFireSound(pAudio);
 
 	SetPosition(Game::GetScreenCenter() + Vector2::UNIT_Y * 300);
@@ -27,6 +31,7 @@ void PlayerShip::HandleInput(const InputState& input)
 {
 	if (IsActive())
 	{
+		//Verify the key that is being pressed on the keyboard
 		Vector2 direction;
 		if (input.IsKeyDown(Key::DOWN)) direction.Y++;
 		if (input.IsKeyDown(Key::UP)) direction.Y--;

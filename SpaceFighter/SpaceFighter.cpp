@@ -19,8 +19,11 @@ SpaceFighter::SpaceFighter()
 
 	// Font for displaying the frame rate
 	Font::SetLoadSize(18, true);
+	//CHANGING THE FONT!
 	Font *pFont = GetResourceManager()->Load<Font>("Fonts\\Arialbd.ttf", false);
 	SetFrameCounterFont(pFont);
+
+
 }
 
 
@@ -42,3 +45,4 @@ void SpaceFighter::Draw(SpriteBatch& spriteBatch)
 
 	DisplayFrameRate();
 }
+

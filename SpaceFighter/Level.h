@@ -30,14 +30,17 @@ public:
 
 	/** @brief Handle input for the level.
 		@param input The current state of all player input devices. */
+	//What buttons are the player pressing
 	virtual void HandleInput(const InputState& input);
 
 	/** @brief Update the level.
 		@param pGameTime Timing values including time since last update. */
+	//React to the button that is being called
 	virtual void Update(const GameTime& gameTime);
 
 	/** @brief Render the level, and all of the game objects within it.
 		@param spriteBatch A reference to the game's sprite batch, used for rendering. */
+	//Display to the screen
 	virtual void Draw(SpriteBatch& spriteBatch);
 
 	/** @brief Add a game object to the level.

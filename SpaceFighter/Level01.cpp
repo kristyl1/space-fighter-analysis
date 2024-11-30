@@ -3,10 +3,10 @@
 #include "Level01.h"
 #include "BioEnemyShip.h"
 
-
+//ResourceManager - Load images, sounds, and fonts
 void Level01::LoadContent(ResourceManager& resourceManager)
 {
-	// Setup enemy ships
+	// Setup enemy ships - LOADING IN Bioenemyship photo
 	Texture *pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyShip.png");
 
 	const int COUNT = 21;
@@ -44,7 +44,7 @@ void Level01::LoadContent(ResourceManager& resourceManager)
 		AddGameObject(pEnemy);
 	}
 
-	// Setup background
+	// Setup background - Load background image spacebackground
 	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground01.png"));
 
 	Level::LoadContent(resourceManager);

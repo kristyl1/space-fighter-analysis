@@ -248,6 +248,7 @@ void Level::Draw(SpriteBatch& spriteBatch)
 		pGameObject->Draw(spriteBatch);
 	}
 
+	//This will draw the game!
 	spriteBatch.End();
 
 	// Explosions use additive blending so they need to be drawn after the main sprite batch

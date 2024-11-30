@@ -87,6 +87,7 @@ namespace KatanaEngine
 	{
 		m_isRunning = true;
 
+		//This creates the window
 		if (!m_isInitialized)
 		{
 			const char message[] = "Failed to initialize the game.";
@@ -98,6 +99,7 @@ namespace KatanaEngine
 		if (m_isFullScreen) al_set_new_display_flags(ALLEGRO_FULLSCREEN);
 		if (m_requireOpenGL) al_set_new_display_flags(ALLEGRO_OPENGL);
 
+		//Creates the display - Sets the title 
 		ALLEGRO_DISPLAY *pDisplay = al_create_display(GetScreenWidth(), GetScreenHeight());
 		if (!pDisplay)
 		{
@@ -131,6 +133,7 @@ namespace KatanaEngine
 			al_register_event_source(pEventQueue, joystickEventSource);
 		}
 
+		//Creates a timer
 		ResetGameTime();
 
 		LoadContent(*m_pResourceManager);
